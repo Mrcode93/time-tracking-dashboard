@@ -1,0 +1,251 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+  background-color: hsl(226deg, 43%, 10%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 20px;
+}
+.container .main {
+  width: 230px;
+  background-color: hsl(235deg, 46%, 20%);
+  height: 420px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.container .main .user {
+  width: 100%;
+  height: 70%;
+  background-color: hsl(246deg, 80%, 60%);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 20px;
+}
+.container .main .user img {
+  border: 3px solid #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.container .main .user p {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 25px;
+}
+.container .main .user h1 {
+  font-weight: 400;
+  margin-top: 10px;
+}
+.container .main .times p {
+  color: rgba(255, 255, 255, 0.663);
+  font-weight: 400;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.container .main .times p:hover {
+  color: #fff;
+}
+.container .main .times p:not(:first-child) {
+  margin-top: 14px;
+}
+.container .main .times .active {
+  color: rgb(255, 255, 255);
+}
+.container .boxes {
+  width: 660px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.container .boxes .box {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.container .boxes .box .info {
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  background: hsl(235deg, 46%, 20%);
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container .boxes .box .info .title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  color: #fff;
+}
+.container .boxes .box .info .time {
+  font-size: 40px;
+  color: #fff;
+  align-self: flex-start;
+  font-weight: 400;
+}
+.container .boxes .box .info .last {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  align-self: flex-start;
+}
+.container .boxes .work {
+  background: hsl(15deg, 100%, 70%);
+  background-image: url(../images/icon-work.svg);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.container .boxes .play {
+  background: hsl(195deg, 74%, 62%);
+  background-image: url(../images/icon-play.svg);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.container .boxes .study {
+  background: hsl(348deg, 100%, 68%);
+  background-image: url(../images/icon-study.svg);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.container .boxes .Exercise {
+  background: hsl(145deg, 58%, 55%);
+  background-image: url(../images/icon-exercise.svg);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.container .boxes .social {
+  background: hsl(264deg, 64%, 52%);
+  background-image: url(../images/icon-social.svg);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.container .boxes .self-care {
+  background: hsl(43deg, 84%, 65%);
+  background-image: url(../images/icon-self-care.svg);
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  .container .main {
+    width: 350px;
+    height: 250px;
+    padding-bottom: 0px;
+  }
+  .container .main .user {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 65%;
+  }
+  .container .main .user img {
+    grid-area: 1/1/3/2;
+    align-self: center;
+    width: 80px;
+    height: 80px;
+  }
+  .container .main .user p {
+    grid-area: 1/2/2/3;
+  }
+  .container .main .user h1 {
+    grid-area: 2/2/3/3;
+  }
+  .container .main .times {
+    height: 30%;
+  }
+  .container .main .times p {
+    margin-top: 0;
+    line-height: 10px;
+  }
+  .container .main .times p:not(:first-child) {
+    margin-top: 10px;
+  }
+  .container .boxes {
+    padding-bottom: 30px;
+  }
+  .container .boxes .box {
+    width: 350px;
+    height: 200px;
+  }
+}/*# sourceMappingURL=style.css.map */

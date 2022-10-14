@@ -1,0 +1,241 @@
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        
+        @mixin radius {
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+        }
+        
+        @mixin transition {
+            transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+        }
+        
+        @mixin flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        body {
+            width: 100%;
+            min-height: 100vh;
+            font-family: 'Rubik', sans-serif;
+            background-color: hsl(226, 43%, 10%);
+            @include flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .container {
+            margin-bottom: 30px;
+            @include flex;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 20px;
+            & .main {
+                width: 230px;
+                background-color: hsl(235, 46%, 20%);
+                height: 420px;
+                @include radius;
+                position: relative;
+                overflow: hidden;
+                padding: 20px;
+                @include flex;
+                align-items: flex-end;
+                justify-content: flex-start;
+                & .user {
+                    width: 100%;
+                    height: 70%;
+                    background-color: hsl(246, 80%, 60%);
+                    @include radius;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: #fff;
+                    padding: 20px;
+                    & img {
+                        border: 3px solid #fff;
+                        border-radius: 50%;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        -ms-border-radius: 50%;
+                        -o-border-radius: 50%;
+                    }
+                    & p {
+                        font-family: 'Inter', sans-serif;
+                        font-size: 13px;
+                        font-weight: 400;
+                        margin-top: 25px;
+                    }
+                    & h1 {
+                        font-weight: 400;
+                        margin-top: 10px;
+                    }
+                }
+                & .times {
+                    p {
+                        color: rgba(255, 255, 255, 0.663);
+                        font-weight: 400;
+                        font-size: 13px;
+                        cursor: pointer;
+                        @include transition;
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                    p:not(:first-child) {
+                        margin-top: 14px;
+                    }
+                    .active {
+                        color: rgb(255, 255, 255);
+                    }
+                }
+            }
+            .boxes {
+                width: 660px;
+                height: 420px;
+                @include flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                .box {
+                    width: 200px;
+                    height: 200px;
+                    @include flex;
+                    @include radius;
+                    position: relative;
+                    overflow: hidden;
+                    & .info {
+                        width: 100%;
+                        height: 80%;
+                        position: absolute;
+                        background: hsl(235, 46%, 20%);
+                        bottom: 0;
+                        left: 0;
+                        @include radius;
+                        padding: 20px;
+                        @include flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .title {
+                            width: 100%;
+                            @include flex;
+                            justify-content: space-between;
+                            color: #fff;
+                        }
+                        .time {
+                            font-size: 40px;
+                            color: #fff;
+                            align-self: flex-start;
+                            font-weight: 400;
+                        }
+                        .last {
+                            color: #fff;
+                            font-size: 13px;
+                            font-weight: 400;
+                            align-self: flex-start;
+                        }
+                    }
+                }
+                .work {
+                    background: hsl(15, 100%, 70%);
+                    background-image: url(../images/icon-work.svg);
+                    background-size: 30%;
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+                .play {
+                    background: hsl(195, 74%, 62%);
+                    background-image: url(../images/icon-play.svg);
+                    background-size: 30%;
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+                .study {
+                    background: hsl(348, 100%, 68%);
+                    background-image: url(../images/icon-study.svg);
+                    background-size: 30%;
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+                .Exercise {
+                    background: hsl(145, 58%, 55%);
+                    background-image: url(../images/icon-exercise.svg);
+                    background-size: 30%;
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+                .social {
+                    background: hsl(264, 64%, 52%);
+                    background-image: url(../images/icon-social.svg);
+                    background-size: 30%;
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+                .self-care {
+                    background: hsl(43, 84%, 65%);
+                    background-image: url(../images/icon-self-care.svg);
+                    background-size: 30%;
+                    background-repeat: no-repeat;
+                    background-position: right top;
+                }
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin-top: 50px;
+                margin-bottom: 30px;
+                .main {
+                    width: 350px;
+                    height: 250px;
+                    .user {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-rows: repeat(2, 1fr);
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        height: 65%;
+                        img {
+                            grid-area: 1 / 1 / 3 / 2;
+                            align-self: center;
+                            width: 80px;
+                            height: 80px;
+                        }
+                        p {
+                            grid-area: 1 / 2 / 2 / 3;
+                        }
+                        h1 {
+                            grid-area: 2 / 2 / 3 / 3;
+                        }
+                    }
+                    .times {
+                        height: 30%;
+                        p {
+                            margin-top: 0;
+                            line-height: 10px
+                        }
+                        p:not(:first-child) {
+                            margin-top: 10px;
+                        }
+                    }
+                    padding-bottom: 0px;
+                }
+                .boxes {
+                    .box {
+                        width: 350px;
+                        height: 200px;
+                    }
+                    padding-bottom:30px
+                }
+            }
+        }
